@@ -26,7 +26,7 @@ showPage();
 function showPage(index = 0) {
   console.log(index);
   for (let i = 0; i < students.length; i++) {
-    if (i > index && i < index + 10) {
+    if (i > index && i <= index + 10) {
       students[i].style.display = "";
     } else {
       students[i].style.display = "none";
