@@ -24,9 +24,8 @@ const div = document.createElement("div");
 showPage();
 
 function showPage(index = 0) {
-  console.log(index);
   for (let i = 0; i < students.length; i++) {
-    if (i > index && i <= index + 10) {
+    if (i >= index && i <= index + 10) {
       students[i].style.display = "";
     } else {
       students[i].style.display = "none";
@@ -38,7 +37,7 @@ appendPageLinks();
 function appendPageLinks() {
   div.className = "pagination";
   ul.appendChild(div);
-  for (let i = 0; i < Math.floor(students.length / 10); i++) {
+  for (let i = 0; i < Math.ceil(students.length / 10); i++) {
     const li = document.createElement("li");
     const pageIndexBtn = document.createElement("a");
     pageIndexBtn.href = "#";
